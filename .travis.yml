@@ -5,6 +5,7 @@ services:
   - docker
 
 before_install:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin      
   - docker build -t ankiwadhwa2/reactapp-prod -f Dockerfile .
 
 script:
