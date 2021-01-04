@@ -5,7 +5,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t ankiwadhwa2/reactapp-dev -f Dockerfile.dev .
+  - docker build -t ankiwadhwa2/reactapp-dev -f Dockerfile .
 
 script:
   - docker run -e CI=true ankiwadhwa2/reactapp-dev npm run test -- --coverage
