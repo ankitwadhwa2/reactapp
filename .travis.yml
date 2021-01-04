@@ -5,10 +5,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t ankiwadhwa2/reactapp-dev -f Dockerfile .
+  - docker build -t ankiwadhwa2/reactapp-prod -f Dockerfile .
 
 script:
-  - docker run -e CI=true ankiwadhwa2/reactapp-dev npm run test -- --coverage
+  - docker run -e CI=true ankiwadhwa2/reactapp-prod npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
